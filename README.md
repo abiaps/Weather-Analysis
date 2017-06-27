@@ -10,3 +10,27 @@
 
 # Similarly the average can be computed for month, year based on the needs
 
+# Compile the code using the following cmd
+
+  javac -classpath ${HADOOP_CLASSPATH} -d '/home/abiaps/Desktop/weatherclass' '/home/abiaps/Desktop/WeatherAnalysis.java' 
+  
+  where weatherclass is the folder created for the compiled classes
+  
+# Create a jar file using the class folder
+
+  jar -cvf weather.jar -C weatherclass/ . 
+  
+  where weather.jar is the jar file to be created
+  
+# Run the java application using the jar file created
+
+  hadoop jar '/home/abiaps/Desktop/weather.jar' WeatherAnalysis /weather/input/hourly_2006.g /weather/temp /weather/output
+  
+  where WeatherAnalysis is my java file, path of input file in hdfs, output of job1 and output of job2 path
+
+
+  
+
+  
+
+
